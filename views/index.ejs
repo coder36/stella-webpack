@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css"/>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
 <div class="desktop"></div>
@@ -12,12 +11,7 @@
 <div class="mobile"></div>
 <div id="content"><%-content%></div>
 </body>
-<script>
-
-    var delay = location.search.split('delay=').length == 1 ? 0 : location.search.split('delay=')[1];
-    setTimeout(function () {
-        $.getScript('bundle.js')
-    }, delay);
-
-</script>
+<% if(!iso_only) { %>
+    <script src="bundle.js"></script>
+<% } %>
 </html>

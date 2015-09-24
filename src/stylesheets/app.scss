@@ -3,6 +3,15 @@
 $responsive_mobile_breakpoint: 600px !default;
 $responsive_tablet_breakpoint: 1000px !default;
 
+@font-face {
+  font-family: 'SkyTextRegular';
+  src: url('/fonts/sky_regular.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/sky_regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/fonts/sky_regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('/fonts/sky_regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
 @mixin desktop {
   @media screen and (min-width: $responsive_tablet_breakpoint) {
     @content;
@@ -21,7 +30,6 @@ $responsive_tablet_breakpoint: 1000px !default;
   }
 }
 
-//@include font-face("SkyTextRegular", font-files("/fonts/sky_regular.ttf", "/fonts/sky_regular.svg", "/fonts/sky_regular.eot" ));
 
 * {
   box-sizing: border-box;

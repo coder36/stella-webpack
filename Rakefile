@@ -61,6 +61,7 @@ task :build do
   `webpack -p`
   Rake::Task["express:start"].invoke
   File.open('_gen/index.html', 'w') { |out| out.write call_url("http://localhost:3000/index") }
+  File.open('_gen/iso.html', 'w') { |out| out.write call_url("http://localhost:3000/iso") }
   Rake::Task["express:start"].invoke
 end
 

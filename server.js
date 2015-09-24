@@ -9,7 +9,11 @@ app.use(express.static('_gen'));
 app.set('view engine', 'ejs');
 
 app.get('/index', function (req, res) {
-    res.render('index', { content: React.renderToString(<Page/>) });
+    res.render('index', { content: React.renderToString(<Page/>), iso_only: false });
+});
+
+app.get('/index_iso', function (req, res) {
+    res.render('index', { content: React.renderToString(<Page/>), iso_only: true });
 });
 
 app.get('/iso', function (req, res) {
