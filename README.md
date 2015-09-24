@@ -4,7 +4,7 @@ An example of using webpack to render ES6/2015 react project.  Based on [stella]
 
 The most optimised version of the site is served up as a static html file, with the isomorphic site pre-rendered and embedded in a html file.
 This is as fast as it gets: 
-####[demo](http://vast-journey-2015.herokuapp.com/index.html)
+####[demo](http://pure-mountain-5774.herokuapp.com/index.html)
   
   - React 
   
@@ -20,7 +20,7 @@ This is as fast as it gets:
   
 It's responsive...
 
-<a href="http://vast-journey-2015.herokuapp.com/"><img src="https://raw.githubusercontent.com/coder36/stella/master/public/img/screenshot2.png" width="400px" /></a>
+<a href="http://pure-mountain-5774.herokuapp.com/"><img src="https://raw.githubusercontent.com/coder36/stella/master/public/img/screenshot2.png" width="400px" /></a>
 
 
 
@@ -33,7 +33,7 @@ The work around for this is to pre render the page using 'isomorphic' react.  Fo
 
 This works really well on a mobile device and effectively disguises what can be a slow first render.
 
-####[ismorphic only demo](http://vast-journey-2015.herokuapp.com/iso)
+####[ismorphic only demo](http://pure-mountain-5774.herokuapp.com/iso)
 
 
 ## Dev Setup
