@@ -33,7 +33,7 @@ The work around for this is to pre render the page using 'isomorphic' react.  Fo
 
 This works really well on a mobile device and effectively disguises what can be a slow first render.
 
-####[isomorphic demo](http://pure-mountain-5774.herokuapp.com/iso)
+####[isomorphic demo](http://pure-mountain-5774.herokuapp.com/index_iso)
 
 
 ## Dev Setup
