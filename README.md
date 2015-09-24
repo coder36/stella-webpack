@@ -1,6 +1,6 @@
 # Webpack implementation of Stella
 
-An example of using webpack to render ES6/2015 react project.  Based on [stella](https://github.com/coder36/stella.  
+An example of using webpack to render ES6/2015 react project.  Based on [stella](https://github.com/coder36/stella).  
 
 The most optimised version of the site is served up as a static html file, with the isomorphic site pre-rendered and embedded in a html file.
 This is as fast as it gets: 
@@ -33,7 +33,7 @@ The work around for this is to pre render the page using 'isomorphic' react.  Fo
 
 This works really well on a mobile device and effectively disguises what can be a slow first render.
 
-####[ismorphic only demo](http://pure-mountain-5774.herokuapp.com/iso)
+####[isomorphic demo](http://pure-mountain-5774.herokuapp.com/iso)
 
 
 ## Dev Setup
