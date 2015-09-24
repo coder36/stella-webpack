@@ -1,42 +1,41 @@
 {
-  "name": "stella",
+  "name": "stella_webpack",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Experiment to mix sinatra and javascript.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/babel/bin/babel-node.js --stage 0 server.js",
+    "dev": "webpack-dev-server --content-base "
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jspm": "^0.16.0",
-    "uglifyjs": "^2.4.10"
-  },
-  "jspm": {
-    "directories": {
-      "baseURL": "public"
-    },
-    "dependencies": {
-      "alt": "npm:alt@^0.17.1",
-      "fetch": "npm:whatwg-fetch@^0.9.0",
-      "jquery": "github:components/jquery@^2.1.4",
-      "moment": "github:moment/moment@^2.10.6",
-      "react": "npm:react@^0.13.3",
-      "whatwg-fetch": "npm:whatwg-fetch@^0.9.0"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.22",
-      "babel-runtime": "npm:babel-runtime@^5.8.20",
-      "core-js": "npm:core-js@^1.1.0"
-    }
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "bundle-loader": "^0.5.4",
+    "compass-mixins": "^0.12.7",
+    "css-loader": "^0.19.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "node-compass": "^0.2.4",
+    "node-sass": "^3.3.3",
+    "sass": "^0.5.0",
+    "sass-loader": "^2.0.1",
+    "style-loader": "^0.12.4",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.11.0"
   },
   "dependencies": {
-    "alt": "^0.17.3",
     "babel": "^5.8.23",
     "express": "^4.13.3",
     "jquery": "^2.1.4",
     "moment": "^2.10.6",
     "react": "^0.13.3",
-    "whatwg-fetch": "^0.9.0"
+    "whatwg-fetch": "^0.9.0",
+    "alt": "^0.17.3",
+    "ejs": "^2.3.4"
+
   }
 }

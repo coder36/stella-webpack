@@ -1,18 +1,14 @@
-# Stella Styling
-
-Experiment to mix sinatra and javascript.
+# Stella Styling using weback
 
 ####[Demo](http://vast-journey-2015.herokuapp.com/)
   
   - React 
   
-  - JSPM is used to manage and package the javascript.
+  - Webpack
   
   - Isomorphic React - how does this work in practice ?
   
-  - Rack provides an asset pipeline for SASS -> CSS compilation
-  
-  - Sinatra provides a simple json endpoint to drive the demo app
+  - Express
   
   - Rake pulls it all together
   

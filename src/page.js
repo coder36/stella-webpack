@@ -9,7 +9,7 @@ import NewsFull from './tiles/news_full'
 import TopTile from './toptile'
 import Store from './store/store'
 import React from 'react'
-import connectToStores from 'alt/utils/connectToStores'
+import connectToStores from '../node_modules/alt/utils/connectToStores'
 import $ from 'jquery'
 import {isRunningOnClient} from './utils'
 

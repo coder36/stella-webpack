@@ -4,8 +4,8 @@
 /public/jspm_packages
 /dist
 /views/_pre_rendereded_html.erb
-rack.log
-node.log
+express.log
+webpack.log
 .sass-cache
 .rake_tasks~
 npm-debug.log
