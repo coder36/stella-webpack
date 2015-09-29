@@ -9,12 +9,12 @@ export function hashCode(str) {
         hash = hash & hash; // Convert to 32bit integer
     }
     return hash;
-};
+}
 
 export function currency(amount) {
     return( "£" + amount.toFixed(2));
 }
 
 export function isRunningOnClient() {
-    return(typeof window !== 'undefined');
+    return(!!process.browser);
 }

@@ -4,14 +4,23 @@
   "description": "Experiment to mix sinatra and javascript.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "BABEL_JEST_STAGE=0 jest",
     "start": "node node_modules/babel/bin/babel-node.js --stage 0 server.js",
     "dev": "webpack-dev-server --content-base "
+  },
+  "jest": {
+    "scriptPreprocessor": "./node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "./node_modules/react",
+      "./node_modules/alt",
+      "./src/alt"
+    ]
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^5.8.25",
+    "babel-jest": "^5.3.0",
     "babel-loader": "^5.3.2",
     "bundle-loader": "^0.5.4",
     "compass-mixins": "^0.12.7",
@@ -20,6 +29,7 @@
     "file-loader": "^0.8.4",
     "node-compass": "^0.2.4",
     "node-sass": "^3.3.3",
+    "react-test-tree": "^0.3.1",
     "sass": "^0.5.0",
     "sass-loader": "^2.0.1",
     "style-loader": "^0.12.4",
@@ -36,6 +46,5 @@
     "whatwg-fetch": "^0.9.0",
     "alt": "^0.17.3",
     "ejs": "^2.3.4"
-
   }
 }

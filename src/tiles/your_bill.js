@@ -13,6 +13,7 @@ export default class YourBill extends React.Component {
         let total = bill.total ? currency(bill.total) : "...";
         let dueDate = bill.total ? moment(bill.statement.due).format("MMMM Do") : "...";
         return (
+
             <a id="your_bill" href="#fulltile" onClick={(e) => this.open(e) } className="tile-skyAtlantic-medium" >
                 <div className="full-container">
                     <div className="title">
@@ -29,6 +30,7 @@ export default class YourBill extends React.Component {
                     </div>
                 </div>
             </a>
+
         )
     }
 

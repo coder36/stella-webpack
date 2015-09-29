@@ -14,6 +14,8 @@ This is as fast as it gets:
   
   - Isomorphic React
   
+  - Jest
+  
   - Express
   
   - Rake
