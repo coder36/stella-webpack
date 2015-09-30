@@ -1,6 +1,5 @@
 import React from 'react'
 import Tile from './tile_full'
-import StellaActions from './../store/stellaactions'
 
 @Tile
 export default class NewsFull extends React.Component {

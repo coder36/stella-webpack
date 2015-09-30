@@ -1,12 +1,12 @@
-import StellaActions from './../store/stellaactions'
 import React from 'react'
 import $ from 'jquery'
+import store from '../store/store'
 
 export default function tile(target) {
 
     target.prototype.open = function(e) {
         e.preventDefault();
-        StellaActions.setFullTile(this.props.tile);
+        store.dispatch({type: "setFullTile", data: this.props.tile});
     };
 
     target.prototype.render = function() {

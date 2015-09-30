@@ -7,26 +7,16 @@ import YourBill from './tiles/your_bill'
 import News from './tiles/news'
 import NewsFull from './tiles/news_full'
 import TopTile from './toptile'
-import Store from './store/store'
 import React from 'react'
-import connectToStores from '../node_modules/alt/utils/connectToStores'
 import $ from 'jquery'
 import {isRunningOnClient} from './utils'
+import { connect } from 'react-redux';
 
 
-@connectToStores
-export default class Page extends React.Component{
+class Page extends React.Component{
 
     constructor(props) {
         super(props)
-    }
-
-    static getStores() {
-        return [Store];
-    }
-
-    static getPropsFromStores() {
-        return Store.getState();
     }
 
     getRowView() {
@@ -65,7 +55,6 @@ export default class Page extends React.Component{
 
 
     render() {
-
         this.props.redraw_page;
 
         let tiles = [];
@@ -92,3 +81,12 @@ export default class Page extends React.Component{
 
     }
 }
+
+function select(state) {
+    return {
+        tiles: state.tiles
+    };
+}
+
+
+export default connect(select)(Page)

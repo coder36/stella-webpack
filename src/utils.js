@@ -18,3 +18,7 @@ export function currency(amount) {
 export function isRunningOnClient() {
     return(!!process.browser);
 }
+
+export function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj))
+}

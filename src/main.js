@@ -1,8 +1,9 @@
 import Page from './page'
 import React from 'react'
 import $ from 'jquery'
-import 'whatwg-fetch'
+import store from './store/store'
+import { Provider } from 'react-redux';
+
 require('./stylesheets/app.scss');
 
-
-React.render(<Page/>, $('#content')[0]);
+React.render(<Provider store={store}>{() => <Page/>}</Provider>, $('#content')[0]);

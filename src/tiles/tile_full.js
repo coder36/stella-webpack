@@ -1,6 +1,6 @@
-import StellaActions from './../store/stellaactions'
 import React from 'react'
 import $ from 'jquery'
+import store from '../store/store'
 
 export default function tile(target) {
 
@@ -11,7 +11,7 @@ export default function tile(target) {
     };
 
     target.prototype.close = function(e) {
-        StellaActions.closeFullTile();
+        store.dispatch({type: "closeFullTile"});
     };
 
     target.prototype.render = function() {

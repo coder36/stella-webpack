@@ -1,6 +1,5 @@
 import React from 'react'
 import Tile from './tile_full'
-import StellaActions from './../store/stellaactions'
 import moment from 'moment'
 import {currency} from '../utils'
 

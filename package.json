@@ -38,13 +38,18 @@
     "webpack-dev-server": "^1.11.0"
   },
   "dependencies": {
+    "alt": "^0.17.3",
     "babel": "^5.8.23",
+    "clone": "^1.0.2",
+    "ejs": "^2.3.4",
     "express": "^4.13.3",
+    "immutable": "^3.7.5",
     "jquery": "^2.1.4",
     "moment": "^2.10.6",
     "react": "^0.13.3",
-    "whatwg-fetch": "^0.9.0",
-    "alt": "^0.17.3",
-    "ejs": "^2.3.4"
+    "react-redux": "^3.0.1",
+    "redux": "^3.0.2",
+    "redux-devtools": "^2.1.5",
+    "whatwg-fetch": "^0.9.0"
   }
 }
