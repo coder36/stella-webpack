@@ -1,48 +1,102 @@
 import $ from 'jquery'
-import {isRunningOnClient, hashCode} from '../utils'
 import { connect } from 'react-redux';
 import { createStore } from 'redux';
 import Immutable from 'immutable'
-import init from './data_feeds';
 import {deepClone} from '../utils'
 
+function reduce(state = init(), payload ) {
+    switch(payload.type ) {
 
-function reduce(_state = init(), _payload ) {
-
-    let [state, payload] = [deepClone(_state), deepClone(_payload)] ;
-    let type = payload.type;
-    let data = payload.data;
-
-    if(type == 'addTiles')      addTiles(state, data );
-    if(type == 'setFullTile')   setFullTile(state, data );
-    if(type == 'closeFullTile') closeFullTile(state, data );
-    if(type == 'redrawPage')    redrawPage(state, data );
-
-    return state;
+        case 'addTiles':
+            return addTiles(state, payload.data );
+        case 'setFullTile':
+            return setFullTile(state, payload.data );
+        case 'closeFullTile':
+            return closeFullTile(state, payload.data );
+        case 'redrawPage':
+            return redrawPage(state, payload.data );
+        default:
+            return state;
+    }
 }
 
 function addTiles(state, tiles) {
+    let _state = deepClone(state);
     tiles.forEach( (tile) => {
-        let existingTile = state.tiles.find( t => tile.id === t.id );
+        let existingTile = _state.tiles.find( t => tile.id === t.id );
         if (existingTile) {
             Object.assign(existingTile, tile);
         }
         else {
-            state.tiles.push(tile);
+            _state.tiles.push(tile);
         }
     });
+    return _state;
 }
 
 function setFullTile(state, tile) {
-    state.tiles.forEach( (t) =>  t.fullScreen = (t.id === tile.id) );
+    let _state = deepClone(state);
+    _state.tiles.forEach( (t) =>  t.fullScreen = (t.id === tile.id) );
+    return _state;
 }
 
 function closeFullTile(state, data) {
-    state.tiles.forEach( t => t.fullScreen = false );
+    let _state = deepClone(state);
+    _state.tiles.forEach( t => t.fullScreen = false );
+    return _state;
 }
 
 function redrawPage(state, data) {
-    state.redraw_page = state.redraw_page+1;
+    let _state = deepClone(state);
+    _state.redraw_page = _state.redraw_page+1;
+    return _state;
 }
+
+
+function init() {
+    let tiles = [];
+
+    tiles.push(
+        {
+            id: 'welcome',
+            type: 'info',
+            title: 'Welcome Back',
+            content: '',
+            fullScreen: false
+        },
+        {
+            id: 'your_bill',
+            type: 'your_bill',
+            fullScreen: false
+        }
+    );
+
+    for(let i=1; i<= 4; i++ ) {
+        tiles.push(
+            {
+                id: `s_${i}`,
+                type: "series",
+                channel: "skyOne",
+                size: "medium",
+                name: "",
+                fullScreen: false
+            }
+        )
+    }
+
+    for(let i=1; i<= 10; i++ ) {
+        tiles.push(
+            {
+                id: `n_${i}`,
+                type: "news",
+                title: "",
+                fullScreen: false
+            }
+        )
+    }
+
+    return { tiles, redraw_page: 0 };
+}
+
 
 export default createStore(reduce);

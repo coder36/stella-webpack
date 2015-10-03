@@ -1,11 +1,11 @@
 import React from 'react'
 import Tile from './tile'
+let PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
 @Tile
 export default class NewsTile extends React.Component {
 
     content() {
-        console.log("redraw")
         let news = this.props.tile;
         let img = <div className="blank"></div>
         if (news.title !== "") {

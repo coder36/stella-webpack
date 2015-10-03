@@ -1,7 +1,6 @@
 import store from './store';
 import $ from 'jquery';
 import 'whatwg-fetch';
-
 (function readNewsData() {
     let id = 1;
     $.ajax({
@@ -15,6 +14,7 @@ import 'whatwg-fetch';
             entries.forEach((entry) =>{
                 entry.id = `n_${id++}`;
                 entry.type = 'news';
+                entry.fullScreen = false;
             });
 
             store.dispatch({type: "addTiles", data: entries});
@@ -30,6 +30,7 @@ import 'whatwg-fetch';
         .then((tiles) => {
             tiles.forEach( (tile) => {
                 tile.id  = `s_${id++}`;
+                tile.fullScreen = false;
             });
 
             store.dispatch({type: "addTiles", data: tiles});
@@ -45,6 +46,7 @@ import 'whatwg-fetch';
             let tile = json;
             tile.type = 'your_bill';
             tile.id = 'your_bill';
+            tile.fullScreen = false;
             store.dispatch({type: "addTiles", data: [tile]});
         }
     );
@@ -56,46 +58,4 @@ import 'whatwg-fetch';
 })();
 
 
-function init() {
-    let tiles = [];
-
-    tiles.push(
-        {
-            id: 'welcome',
-            type: 'info',
-            title: 'Welcome Back',
-            content: ''
-        },
-        {
-            id: 'your_bill',
-            type: 'your_bill'
-        }
-    );
-
-    for(let i=1; i<= 4; i++ ) {
-        tiles.push(
-            {
-                id: `s_${i}`,
-                type: "series",
-                channel: "skyOne",
-                size: "medium",
-                name: ""
-            }
-        )
-    }
-
-    for(let i=1; i<= 10; i++ ) {
-        tiles.push(
-            {
-                id: `n_${i}`,
-                type: "news",
-                title: ""
-            }
-        )
-    }
-
-    return { tiles, redraw_page: 0 };
-}
-
-export default init;
 

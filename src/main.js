@@ -1,9 +1,8 @@
-import Page from './page'
+import Page from './page_with_store'
 import React from 'react'
 import $ from 'jquery'
-import store from './store/store'
-import { Provider } from 'react-redux';
+import './store/data_feeds'
 
 require('./stylesheets/app.scss');
 
-React.render(<Provider store={store}>{() => <Page/>}</Provider>, $('#content')[0]);
+React.render(<Page/>, $('#content')[0]);

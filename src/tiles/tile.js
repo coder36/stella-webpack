@@ -11,5 +11,10 @@ export default function tile(target) {
 
     target.prototype.render = function() {
         return this.content();
+    };
+
+    target.prototype.shouldComponentUpdate = function( nextProps, nextState ) {
+        return(JSON.stringify(nextProps) !== JSON.stringify(this.props));
     }
+
 }

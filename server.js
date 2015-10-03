@@ -1,4 +1,4 @@
-import Page from './src/page'
+import Page from './src/page_with_store'
 import express from 'express'
 var React = require('react/addons');
 
